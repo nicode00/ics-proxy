@@ -3,6 +3,7 @@ WORKDIR /ics-proxy
 COPY go.mod go.sum ./
 COPY cmd/ cmd/
 COPY internal/ internal/
+COPY pkg/ pkg/
 RUN go build -tags lambda.norpc cmd/ics-proxy-lambda/ics-proxy-lambda.go
 FROM public.ecr.aws/lambda/provided:al2023
 COPY --from=build /ics-proxy/ics-proxy-lambda ./ics-proxy-lambda
