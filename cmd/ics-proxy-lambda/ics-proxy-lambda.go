@@ -7,8 +7,8 @@ import (
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/nicode00/ics-proxy/internal/config"
-	"github.com/nicode00/ics-proxy/internal/parser"
+	"github.com/nicompile/ics-proxy/internal/config"
+	"github.com/nicompile/ics-proxy/internal/parser"
 )
 
 var conf config.Config
@@ -21,7 +21,11 @@ func handler(ctx context.Context, event events.APIGatewayProxyRequest) (events.A
 
 	body := strings.Builder{}
 
-	parser.Trim(resp.Body, &body)
+	p := parser.New(resp.Body, &body)
+	err = p.Parse()
+	if err != nil {
+		panic(err)
+	}
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,

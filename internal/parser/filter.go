@@ -10,8 +10,8 @@ type Filter struct {
 	Arg      string
 }
 
-func (f Filter) shouldInclude(event map[string]string) bool {
-	val, exists := event[f.Field]
+func (f Filter) FieldsMatch(fields map[string]string) bool {
+	val, exists := fields[f.Field]
 
 	switch f.Operator {
 	case "less_than":

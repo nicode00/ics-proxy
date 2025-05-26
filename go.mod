@@ -1,4 +1,4 @@
-module github.com/nicode00/ics-proxy
+module github.com/nicompile/ics-proxy
 
 go 1.18
 

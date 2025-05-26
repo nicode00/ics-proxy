@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/nicode00/ics-proxy/internal/parser"
+	"github.com/nicompile/ics-proxy/internal/parser"
 )
 
 func main() {
@@ -29,6 +29,11 @@ func main() {
 
 	r := bufio.NewReader(iFile)
 	w := bufio.NewWriter(oFile)
+	defer w.Flush()
 
-	parser.Trim(r, w)
+	parser := parser.New(r, w)
+	err = parser.Parse()
+	if err != nil {
+		panic(err)
+	}
 }
