@@ -2,4 +2,4 @@ name: ics-proxy
 type: SERVERLESS_API
 goVersion: 1.18
 appRoot: /ics-proxy
-target: cmd/ics-proxy-serverless/ics-proxy-serverless.go
+target: cmd/ics-proxy-serverless

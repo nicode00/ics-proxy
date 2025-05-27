@@ -32,7 +32,6 @@ func proxy(request serverlessapi.Request) serverlessapi.Response {
 }
 
 func GetEndpoints() []serverlessapi.Endpoint {
-
 	return []serverlessapi.Endpoint{
 		{
 			Method: "GET",
