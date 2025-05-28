@@ -1,4 +1,4 @@
-name: ics-proxy
+name: icsproxy
 type: SERVERLESS_API
 goVersion: 1.18
 appRoot: /ics-proxy
