@@ -1,6 +1,7 @@
+uid: icsproxy
 goVersion: 1.18
 type: SERVERLESS_FUNCTION
-target: deployables/ics-proxy
+target: deployables/icsproxy
 appRoot: /ics-proxy
 method: GET
 path: /
