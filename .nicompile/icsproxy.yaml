@@ -1,5 +1,6 @@
-name: icsproxy
-type: SERVERLESS_API
 goVersion: 1.18
-appRoot: /ics-proxy
+type: SERVERLESS_FUNCTION
 target: deployables/ics-proxy
+appRoot: /ics-proxy
+method: GET
+path: /
