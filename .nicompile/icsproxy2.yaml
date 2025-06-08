@@ -1,0 +1,6 @@
+uid: icsproxy2
+type: SERVERLESS_FUNCTION
+target: deployables/icsproxy
+appRoot: /ics-proxy
+method: GET
+path: /test
